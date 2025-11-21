@@ -1,3 +1,5 @@
+const { act } = require("react");
+
 //toglogchiin elljiig hadgalah huwisagch
 var activePlayer = 1;
 
@@ -50,16 +52,26 @@ document.querySelector(".btn-roll").addEventListener("click",function shooShid()
         //toglogchiin eeljiig nuguu togloogch ruu shiljuulne
         activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
 
+        //active iin ulaan tsegiig shiljuuleh
         document.querySelector('.player-0-panel').classList.toggle('active');
         document.querySelector('.player-1-panel').classList.toggle('active');
 
         //shoog tur alga bolgono
         diceDom.style.display = "none";
     }    
-
-
 });
 
+//HOLD button of event listener
+document.querySelector('.btn-hold').addEventListener('click', function (){
+    //ug toglogchiin tsugluulsan eeljiin onoog global onood nemeh
+    scores[activePlayer] = scores[activePlayer] + roundScore;
+    //delgets deer onoog uurchilnu
+    document.getElementById('score-' +activePlayer).textContent = scores[activePlayer];
+
+    //eeljiin onoog ni 0 bolgono
+
+    //toglogchiin eeljiig solino
+})
 
 
 
